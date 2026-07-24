@@ -91,6 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Hero video: start at 3.5s and loop back to 3.5s instead of 0
   const heroVideo = document.getElementById('hero-video');
+  const heroPosterFallback = document.getElementById('hero-poster-fallback');
   if (heroVideo) {
     const HERO_START = 3.5;
     heroVideo.addEventListener('loadedmetadata', () => {
@@ -101,11 +102,21 @@ document.addEventListener('DOMContentLoaded', () => {
       heroVideo.play().catch(() => {});
     });
 
-    // Some mobile browsers (notably iOS Safari in Low Power Mode) silently
-    // block autoplay even when muted+playsinline are set, and show their own
-    // play-button overlay while paused. Any tap/scroll on the page retries
-    // play() — once it succeeds, that overlay goes away on its own and we
-    // stop listening.
+    // iOS Low Power Mode (and some other mobile browsers) silently blocks
+    // autoplay even with muted+playsinline set, and shows its own
+    // system-level "tap to play" icon over the paused video — this is
+    // outside the page's DOM, so no CSS can hide it. Instead we keep a
+    // plain <img> (which never gets that treatment) covering the video
+    // until playback is actually confirmed running, then fade it out.
+    if (heroPosterFallback) {
+      heroVideo.addEventListener('playing', () => {
+        heroPosterFallback.classList.add('is-hidden');
+      });
+      heroVideo.addEventListener('pause', () => {
+        heroPosterFallback.classList.remove('is-hidden');
+      });
+    }
+
     heroVideo.muted = true;
     const tryPlayVideo = () => {
       if (heroVideo.paused) {

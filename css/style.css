@@ -186,6 +186,23 @@ a { color: inherit; text-decoration: none; }
   object-fit: cover;
   object-position: center 40%;
 }
+/* Covers the <video> until it's actually confirmed playing. iOS Low Power
+   Mode shows a system-level "autoplay blocked" play icon on paused video
+   that CSS cannot suppress — a plain <img> never gets that treatment, so
+   we hide it underneath this until playback truly starts (see main.js). */
+.hero-poster-fallback {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 40%;
+  transition: opacity 0.4s ease;
+}
+.hero-poster-fallback.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
 /* hide Safari's built-in play button overlay on inline video (shows even without the controls attribute) */
 video::-webkit-media-controls,
 video::-webkit-media-controls-enclosure,
