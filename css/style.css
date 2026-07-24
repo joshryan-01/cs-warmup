@@ -124,7 +124,7 @@ a { color: inherit; text-decoration: none; }
   color: var(--yellow);
   transition: font-size 0.3s ease;
 }
-.brand-word-accent { color: var(--pink); }
+.brand-word-accent { color: var(--green); }
 .site-header.scrolled .brand-word { font-size: 1.35rem; }
 
 .main-nav {
