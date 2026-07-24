@@ -238,7 +238,7 @@ video::-webkit-media-controls-start-playback-button {
   display: block;
   width: 130px;
   height: auto;
-  margin: 0 auto 20px;
+  margin: 16px auto 20px;
   filter: drop-shadow(0 8px 20px rgba(0,0,0,0.55));
 }
 
