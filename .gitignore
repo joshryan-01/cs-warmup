@@ -1,0 +1,9 @@
+.DS_Store
+
+# loose attachment duplicates in project root (not referenced by the site — real assets live under assets/)
+/14.png
+/4.png
+/335_9363.mp4
+/CSPL Pre Carnival-119.jpg
+/CSPL Pre Carnival-328.jpg
+/Screenshot*.png
