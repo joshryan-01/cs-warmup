@@ -236,9 +236,9 @@ video::-webkit-media-controls-start-playback-button {
 
 .hero-logo {
   display: block;
-  width: 130px;
+  width: 90px;
   height: auto;
-  margin: 16px auto 20px;
+  margin: 16px auto 8px;
   filter: drop-shadow(0 8px 20px rgba(0,0,0,0.55));
 }
 
