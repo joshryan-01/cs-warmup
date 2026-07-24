@@ -186,6 +186,14 @@ a { color: inherit; text-decoration: none; }
   object-fit: cover;
   object-position: center 40%;
 }
+/* hide Safari's built-in play button overlay on inline video (shows even without the controls attribute) */
+.hero-media video::-webkit-media-controls,
+.hero-media video::-webkit-media-controls-start-playback-button,
+.hero-media video::-webkit-media-controls-play-button {
+  display: none !important;
+  -webkit-appearance: none;
+  pointer-events: none !important;
+}
 .hero-scrim {
   position: absolute;
   inset: 0;
