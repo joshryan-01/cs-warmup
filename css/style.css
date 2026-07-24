@@ -25,7 +25,10 @@
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
 
 body {
   background: var(--bg);
@@ -290,6 +293,14 @@ video::-webkit-media-controls-start-playback-button {
 }
 
 /* ---------- Marquee ---------- */
+/* the strip inside is rotated/scaled, which pushes its true box past the
+   viewport edges — this wrapper clips that overflow so it can't cause
+   page-level horizontal scroll (very noticeable as sideways rubber-band
+   bounce on iOS) */
+.marquee-clip {
+  overflow: hidden;
+  width: 100%;
+}
 .marquee {
   background: var(--yellow);
   color: var(--ink);
