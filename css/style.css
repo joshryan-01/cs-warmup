@@ -187,11 +187,16 @@ a { color: inherit; text-decoration: none; }
   object-position: center 40%;
 }
 /* hide Safari's built-in play button overlay on inline video (shows even without the controls attribute) */
-.hero-media video::-webkit-media-controls,
-.hero-media video::-webkit-media-controls-start-playback-button,
-.hero-media video::-webkit-media-controls-play-button {
+video::-webkit-media-controls,
+video::-webkit-media-controls-enclosure,
+video::-webkit-media-controls-panel,
+video::-webkit-media-controls-play-button,
+video::-webkit-media-controls-start-playback-button {
   display: none !important;
-  -webkit-appearance: none;
+  opacity: 0 !important;
+  width: 0 !important;
+  height: 0 !important;
+  -webkit-appearance: none !important;
   pointer-events: none !important;
 }
 .hero-scrim {
