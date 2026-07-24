@@ -100,6 +100,28 @@ document.addEventListener('DOMContentLoaded', () => {
       heroVideo.currentTime = HERO_START;
       heroVideo.play().catch(() => {});
     });
+
+    // Some mobile browsers (notably iOS Safari in Low Power Mode) silently
+    // block autoplay even when muted+playsinline are set, and show their own
+    // play-button overlay while paused. Any tap/scroll on the page retries
+    // play() — once it succeeds, that overlay goes away on its own and we
+    // stop listening.
+    heroVideo.muted = true;
+    const tryPlayVideo = () => {
+      if (heroVideo.paused) {
+        heroVideo.muted = true;
+        heroVideo.play().catch(() => {});
+      }
+    };
+    const unlockEvents = ['touchstart', 'touchend', 'click', 'scroll'];
+    const onUnlock = () => {
+      tryPlayVideo();
+      if (!heroVideo.paused) {
+        unlockEvents.forEach(evt => document.removeEventListener(evt, onUnlock));
+      }
+    };
+    unlockEvents.forEach(evt => document.addEventListener(evt, onUnlock, { passive: true }));
+    tryPlayVideo();
   }
 
   // Pause hero video off-screen (saves battery/CPU on long scroll)
