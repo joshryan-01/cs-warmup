@@ -323,7 +323,7 @@ video::-webkit-media-controls-start-playback-button {
   overflow: hidden;
   border-top: 4px solid var(--green);
   border-bottom: 4px solid var(--green);
-  transform: rotate(-1deg) scale(1.02);
+  transform: rotate(-0.3deg) scale(1.02);
 }
 .marquee-track {
   display: flex;
