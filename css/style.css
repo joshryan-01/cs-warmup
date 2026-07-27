@@ -397,8 +397,8 @@ section { position: relative; }
 .flyers {
   padding: 40px 0 90px;
   background:
-    radial-gradient(ellipse at top, rgba(223,26,105,0.35), transparent 60%),
-    radial-gradient(ellipse at bottom, rgba(238,115,55,0.25), transparent 60%),
+    radial-gradient(ellipse at top, rgba(6,96,55,0.45), transparent 60%),
+    radial-gradient(ellipse at bottom, rgba(6,96,55,0.35), transparent 60%),
     var(--bg);
 }
 .flyer-grid {
