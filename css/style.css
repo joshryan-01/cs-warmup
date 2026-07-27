@@ -394,7 +394,13 @@ section { position: relative; }
 .info-card-cta .btn { align-self: flex-start; }
 
 /* ---------- Flyers ---------- */
-.flyers { padding: 40px 0 90px; }
+.flyers {
+  padding: 40px 0 90px;
+  background:
+    radial-gradient(ellipse 900px 650px at 50% 62%, rgba(223,26,105,0.5), transparent 68%),
+    radial-gradient(ellipse 750px 500px at 50% 55%, rgba(238,115,55,0.32), transparent 72%),
+    var(--bg);
+}
 .flyer-grid {
   display: flex;
   justify-content: center;
