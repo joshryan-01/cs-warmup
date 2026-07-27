@@ -538,7 +538,7 @@ section { position: relative; }
 
 /* ---------- CTA band ---------- */
 .cta-band {
-  padding: 110px 0;
+  padding: 64px 0;
   text-align: center;
   background: linear-gradient(135deg, var(--magenta), var(--plum) 55%, var(--orange));
 }
@@ -549,13 +549,7 @@ section { position: relative; }
   font-size: clamp(2.2rem, 6vw, 4rem);
   color: var(--yellow);
   -webkit-text-stroke: 1.5px var(--ink);
-  margin-bottom: 14px;
-}
-.cta-band p {
-  font-weight: 600;
-  margin-bottom: 34px;
-  font-size: 1.05rem;
-  color: var(--white);
+  margin-bottom: 28px;
 }
 .cta-band .btn-primary {
   background: var(--ink);
