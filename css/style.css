@@ -274,8 +274,16 @@ video::-webkit-media-controls-start-playback-button {
   text-shadow: 3px 3px 0 var(--green), 6px 6px 18px rgba(0,0,0,0.5);
 }
 
-.hero-tags {
+.hero-tags-label {
   margin-top: 22px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.75rem;
+  color: var(--orange);
+}
+.hero-tags {
+  margin-top: 6px;
   font-weight: 600;
   font-size: clamp(0.95rem, 2vw, 1.2rem);
   color: var(--text);
