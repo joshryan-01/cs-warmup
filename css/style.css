@@ -540,7 +540,7 @@ section { position: relative; }
 .cta-band {
   padding: 64px 0;
   text-align: center;
-  background: linear-gradient(135deg, var(--magenta), var(--plum) 55%, var(--orange));
+  background: linear-gradient(135deg, var(--ink), var(--yellow) 55%, var(--orange));
 }
 .cta-band h2 {
   font-family: var(--font-display);
