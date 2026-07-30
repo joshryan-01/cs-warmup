@@ -405,7 +405,10 @@ section { position: relative; }
 .venue {
   padding: 70px 0;
   text-align: center;
-  background: var(--bg-alt);
+  background:
+    radial-gradient(ellipse at top, rgba(6,96,55,0.4), transparent 60%),
+    radial-gradient(ellipse at bottom, rgba(6,96,55,0.3), transparent 60%),
+    var(--bg-alt);
 }
 .venue-text {
   max-width: 560px;
